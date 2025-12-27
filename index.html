@@ -339,14 +339,12 @@
                     <ul class="zh-only">
                         <li>学习分析 (Learning Analytics)</li>
                         <li>人工智能教育应用 (Artificial Intelligence in Education, AIED)</li>
-                        <li>教育中的AI应用 (AI Applications in Education)</li>
                         <li>教育数据挖掘 (Educational Data Mining)</li>
                         <li>个性化学习系统 (Personalized Learning Systems)</li>
                     </ul>
                     <ul class="en-only">
                         <li>Learning Analytics</li>
                         <li>Artificial Intelligence in Education (AIED)</li>
-                        <li>AI Applications in Education</li>
                         <li>Educational Data Mining</li>
                         <li>Personalized Learning Systems</li>
                     </ul>
@@ -399,7 +397,7 @@
                 <div class="contact-info">
                     <p><strong class="zh-only">邮箱：</strong><strong class="en-only">Email: </strong><a href="mailto:zijian.li@example.com">zijian.li@example.com</a></p>
                     <p><strong class="zh-only">GitHub：</strong><strong class="en-only">GitHub: </strong><a href="https://github.com/Suiwan" target="_blank">github.com/Suiwan</a></p>
-                    <p><strong class="zh-only">Google Scholar：</strong><strong class="en-only">Google Scholar: </strong><a href="https://scholar.google.com" target="_blank" class="zh-only">学术档案</a><a href="https://scholar.google.com" target="_blank" class="en-only">Profile</a></p>
+                    <p><strong class="zh-only">Google Scholar：</strong><strong class="en-only">Google Scholar: </strong><a href="https://scholar.google.com" target="_blank"><span class="zh-only">学术档案</span><span class="en-only">Profile</span></a></p>
                 </div>
             </section>
         </main>
@@ -427,7 +425,8 @@
         // Load saved language preference on page load
         document.addEventListener('DOMContentLoaded', function() {
             const savedLang = localStorage.getItem('preferredLanguage');
-            if (savedLang) {
+            // Validate savedLang before applying
+            if (savedLang && (savedLang === 'zh-CN' || savedLang === 'en')) {
                 document.documentElement.setAttribute('lang', savedLang);
             }
         });
