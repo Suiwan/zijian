@@ -1,350 +1,252 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#ffffff">
-  <meta name="description" content="Zijian Li is a master's researcher in Educational Technology at Peking University. Research in AI in Education, LLM-based learner simulation, complex problem solving, and learning analytics.">
-  <meta name="author" content="Zijian Li">
-  <meta property="og:type" content="profile">
-  <meta property="og:title" content="Zijian Li — AI in Education & Learning Analytics">
-  <meta property="og:description" content="Learning analytics, LLM-based learner simulation, and human–AI collaboration in complex problem solving.">
-  <meta property="og:url" content="https://suiwan.github.io/zijian/">
-  <link rel="canonical" href="https://suiwan.github.io/zijian/">
-  <title>Zijian Li | Academic Homepage</title>
-  <style>
-    :root{color-scheme:light;--ink:#192b3b;--body:#394d5f;--muted:#697d8d;--blue:#205987;--blue-dark:#16446b;--line:#dfe8ee;--wash:#f7f9fb;--pale:#edf4fa}
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth;scroll-padding-top:84px}
-    body{margin:0;background:white;color:var(--body);font:16px/1.75 -apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,"Noto Sans CJK SC",sans-serif;-webkit-font-smoothing:antialiased}
-    a{color:var(--blue);text-underline-offset:4px}a:hover{color:var(--blue-dark)}
-    a:focus-visible,button:focus-visible{outline:3px solid #93bbd9;outline-offset:3px}
-    h1,h2,h3,p{margin-top:0}
-    h1,h2{font-family:Georgia,"Iowan Old Style","Noto Serif CJK SC",serif;color:var(--ink);letter-spacing:-.025em}
-    h3{color:var(--ink)}
-    .wrap{width:min(calc(100% - 48px),1040px);margin-inline:auto}
-    .site-header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.97);border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}
-    .topbar{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:18px}
-    .brand{color:var(--ink);font-size:14px;font-weight:800;letter-spacing:.08em;text-decoration:none;white-space:nowrap}
-    .brand span{font-size:12px;font-weight:400;letter-spacing:0;color:#8392a0;margin-left:7px}
-    .nav{display:flex;flex-wrap:wrap;gap:22px;align-items:center}
-    .nav a{color:#506575;text-decoration:none;font-size:13px;font-weight:680}
-    .nav a:hover{color:var(--blue)}
-    #language-toggle{border:1px solid #c9d9e4;border-radius:5px;color:var(--blue-dark);background:#fff;cursor:pointer;padding:5px 12px;font:inherit;font-size:12px;font-weight:750}
-    #language-toggle:hover{background:var(--pale)}
-    .hero{padding-block:82px 76px;display:grid;grid-template-columns:minmax(0,1fr) 184px;gap:52px;align-items:start}
-    .eyebrow{font-size:12px;font-weight:750;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:22px}
-    .hero h1{font-size:clamp(48px,6.8vw,75px);font-weight:600;line-height:1.1;margin-bottom:20px}
-    .cname{font-size:clamp(22px,2.7vw,29px);letter-spacing:.05em;font-weight:400;color:#83909c;margin-left:12px;white-space:nowrap}
-    .tagline{font-size:clamp(20px,2.6vw,25px);color:#2f4f67;max-width:780px;line-height:1.5;font-weight:500;margin-bottom:22px}
-    .intro{font-size:16px;max-width:810px;color:#526576;margin-bottom:0}
-    .intro strong{color:var(--ink)}
-    .hero-links{display:flex;gap:11px 22px;flex-wrap:wrap;margin-top:27px}
-    .hero-links a{font-size:14px;font-weight:720;text-decoration:none;border-bottom:1px solid #b0cbde;padding-bottom:2px}
-    .hero-note{display:inline-block;margin-top:26px;background:var(--pale);border-left:3px solid var(--blue);font-size:13px;color:#315b79;padding:10px 15px}
-    .photo-slot{margin-top:8px;width:184px;height:225px;border-radius:7px;overflow:hidden;background:linear-gradient(145deg,#edf3f7,#d9e7f1);border:1px solid #dfebf1;display:flex;align-items:center;justify-content:center;position:relative}
-    .photo-slot img{width:100%;height:100%;display:block;object-fit:cover;object-position:center 30%;position:absolute;inset:0}
-    .photo-initials{font:600 47px Georgia,serif;letter-spacing:.05em;color:#92aabc}
-    .photo-slot[data-empty="true"]{display:none}
-    .band{background:var(--wash);border-block:1px solid var(--line)}
-    .section{padding-block:68px 77px}
-    .section-head{margin-bottom:29px}
-    h2{font-size:33px;line-height:1.25;font-weight:600;margin:0}
-    .section-desc{font-size:14px;color:var(--muted);margin:9px 0 0;max-width:780px}
-    .research-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
-    .research-card{padding:24px 25px;border:1px solid var(--line);border-radius:6px;background:white}
-    .research-status{font-size:11px;color:var(--blue);text-transform:uppercase;letter-spacing:.09em;font-weight:800}
-    .research-card h3{font-size:19px;line-height:1.42;margin:8px 0 12px;font-weight:720}
-    .research-card p{font-size:14px;line-height:1.8;color:#526575;margin:0}
-    .research-card a{font-size:13px;font-weight:750;display:inline-block;margin-top:14px;text-decoration:none}
-    .topics{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}
-    .topic{padding:4px 9px;border-radius:4px;background:#edf2f7;border:1px solid #e1e8ee;color:#506b7e;font-size:11px;line-height:1.5}
-    .pub-list{display:flex;flex-direction:column}
-    .publication{display:grid;grid-template-columns:65px minmax(0,1fr);gap:26px;padding:22px 0;border-top:1px solid var(--line)}
-    .publication:last-child{border-bottom:1px solid var(--line)}
-    .pub-year{color:#81919f;font-size:13px;font-weight:750;padding-top:2px;font-variant-numeric:tabular-nums}
-    .pub-kind{font-size:11px;color:var(--blue);text-transform:uppercase;letter-spacing:.09em;font-weight:800;margin:0 0 6px}
-    .pub-title{font-size:17px;line-height:1.48;letter-spacing:-.01em;font-weight:730;color:var(--ink);margin:0 0 7px}
-    .pub-authors{font-size:13px;color:#576a79;line-height:1.78;margin:0 0 7px;overflow-wrap:anywhere}
-    .pub-authors strong{color:var(--ink)}
-    .pub-venue{color:#738492;font-size:13px;line-height:1.7;font-style:italic;margin:0 0 7px}
-    .pub-links{display:flex;gap:14px;flex-wrap:wrap}
-    .pub-links a{font-size:12px;font-weight:780;text-decoration:none}
-    .minor-title{font-family:inherit;font-weight:800;font-size:18px;color:var(--ink);margin:34px 0 14px}
-    .status-note{background:#f2f7fb;border-left:3px solid #8caec9;color:#526b7e;font-size:14px;padding:13px 18px;margin-top:18px;line-height:1.75}
-    .background-grid{display:grid;grid-template-columns:1.06fr .94fr;gap:76px}
-    .background-title{color:var(--ink);font-family:inherit;font-size:18px;font-weight:750;border-bottom:1px solid var(--line);padding-bottom:11px;margin-bottom:20px}
-    .background-title:not(:first-child){margin-top:38px}
-    .edu{display:flex;align-items:center;gap:17px;margin-bottom:25px}
-    .edu:last-child{margin-bottom:0}
-    .school-logo{width:65px;height:65px;flex:0 0 65px;object-fit:contain;border-radius:50%;background:#fff}
-    .edu-copy{min-width:0}
-    .edu-name{color:var(--ink);font-size:15px;font-weight:780;line-height:1.45;margin:0}
-    .edu-detail{color:#657a89;font-size:13px;line-height:1.7;margin:2px 0}
-    .edu-date{color:#8594a0;font-size:12px}
-    .simple-list{padding-left:19px;margin:0;color:#536676;font-size:14px;line-height:1.86}
-    .simple-list li+li{margin-top:8px}
-    .simple-list strong{color:var(--ink)}
-    .site-footer{background:var(--wash);border-top:1px solid var(--line);padding-block:31px 40px}
-    .footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px 25px;color:#7c8c98;font-size:12px}
-    .footer-inner a{text-decoration:none;font-size:13px;font-weight:750}
-    html[lang="en"] .zh,html[lang="zh-CN"] .en{display:none!important}
-    @media(max-width:840px){.wrap{width:min(calc(100% - 36px),1040px)}.topbar{flex-wrap:wrap;padding-block:12px}.nav{gap:12px 18px}.hero{grid-template-columns:minmax(0,1fr) 144px;gap:24px;padding-block:55px}.photo-slot{width:144px;height:181px}.section{padding-block:49px 59px}.research-grid,.background-grid{grid-template-columns:1fr}.background-grid{gap:37px}}
-    @media(max-width:570px){.brand{width:100%}.nav{gap:10px 16px}.hero{grid-template-columns:1fr}.photo-slot{width:140px;height:170px;margin:0;grid-row:1;justify-self:start}.hero h1{font-size:49px}.cname{display:block;margin:12px 0 0}h2{font-size:28px}.publication{grid-template-columns:1fr;gap:0}.pub-year{padding-top:0}.research-card{padding:21px}}
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-    @media print{.site-header,#language-toggle{display:none}.section{padding-block:25px}.research-card,.publication{break-inside:avoid}}
-  </style>
-  <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"Person","name":"Zijian Li","alternateName":"李子健","url":"https://suiwan.github.io/zijian/","affiliation":{"@type":"CollegeOrUniversity","name":"Peking University"},"sameAs":["https://github.com/Suiwan","https://www.linkedin.com/in/zijian-li-4985043ab/","https://scholar.google.com/citations?user=z4GE5RYAAAAJ"],"knowsAbout":["AI in Education","Learning Analytics","LLM-based Learner Simulation","Complex Problem Solving","Self-Regulated Learning"]}
-  </script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#faf9f7">
+<meta name="description" content="Zijian Li is a master's researcher at Peking University studying LLM-based learner simulation, complex problem solving, and learning analytics.">
+<meta name="author" content="Zijian Li">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Zijian Li — Academic Homepage">
+<meta property="og:description" content="Research on learner simulation, learning analytics and human–AI collaboration.">
+<meta property="og:image" content="https://suiwan.github.io/zijian/assets/portrait.jpg">
+<link rel="canonical" href="https://suiwan.github.io/zijian/">
+<title>Zijian Li | Academic Homepage</title>
+<style>
+:root{--paper:#faf9f7;--ink:#242b29;--body:#3b4642;--muted:#707b75;--faint:#919b95;--line:#dce0dc;--tint:#f0f2ef;--accent:#315c51;--accent-soft:#59786e;--focus:#8da99b}
+html[data-theme="dark"]{--paper:#171d1b;--ink:#e7ebe8;--body:#c1cbc5;--muted:#98a69f;--faint:#83918a;--line:#34403a;--tint:#222a26;--accent:#a8c9b6;--accent-soft:#a3c6b3;--focus:#9ebead;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:30px}
+body{margin:0;background:var(--paper);color:var(--body);font:15px/1.73 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans CJK SC","PingFang SC",Arial,sans-serif;-webkit-font-smoothing:antialiased;transition:background-color .18s,color .18s}
+a{color:inherit;text-decoration-color:var(--faint);text-underline-offset:4px}a:hover{color:var(--accent)}
+button{font:inherit}button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid var(--focus);outline-offset:4px}
+h1,h2,h3,p{margin-top:0}h1,h2{color:var(--ink)}
+.serif{font-family:"Iowan Old Style","Palatino Linotype",Georgia,"Songti SC",serif}
+.page{width:min(100% - 86px,1080px);margin-inline:auto;display:grid;grid-template-columns:275px minmax(0,1fr);gap:clamp(55px,8vw,114px);padding-top:75px}
+.sidebar{align-self:start;position:sticky;top:34px;padding-bottom:40px}
+.portrait{width:178px;height:217px;display:block;object-fit:cover;object-position:center 32%;filter:saturate(.9);background:#e3e6e2}
+.name{font-family:"Iowan Old Style","Palatino Linotype",Georgia,serif;letter-spacing:-.045em;font-weight:500;line-height:1.05;font-size:39px;margin:27px 0 2px}
+.chinese-name{font-size:15px;color:var(--faint);margin:0 0 19px;letter-spacing:.08em}
+.identity{font-size:14px;line-height:1.72;color:var(--muted);margin:0;max-width:255px}
+.identity strong{color:var(--ink);font-weight:550}
+.side-nav{display:flex;flex-direction:column;align-items:flex-start;gap:10px;border-top:1px solid var(--line);margin-top:29px;padding-top:24px}
+.side-nav a{text-decoration:none;position:relative;font-size:13px;color:var(--muted);padding:2px 0;transition:color .15s}
+.side-nav a:hover,.side-nav a.active{color:var(--ink)}
+.side-nav a.active:after{content:"";height:1px;background:var(--accent);position:absolute;bottom:-1px;left:0;right:0}
+.external{display:flex;flex-wrap:wrap;gap:8px 15px;margin-top:29px;font-size:12.5px;line-height:1.6}
+.external a{color:var(--body);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:1px;transition:border-color .15s}
+.external a:hover{border-color:var(--accent)}
+.preferences{display:flex;gap:14px;align-items:center;margin-top:24px}
+.pref-btn{border:0;background:none;color:var(--muted);cursor:pointer;padding:3px 0;font-size:12px;transition:color .15s}
+.pref-btn:hover{color:var(--ink)}
+.pref-btn.theme{font-size:16px;line-height:1}
+.content{min-width:0;padding-bottom:78px}
+.intro{padding:9px 0 72px}
+.eyeline{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:19px}
+.intro h2{font-family:"Iowan Old Style","Palatino Linotype",Georgia,"Songti SC",serif;font-size:clamp(38px,4.1vw,53px);font-weight:500;letter-spacing:-.046em;line-height:1.17;max-width:710px;margin-bottom:27px}
+.intro p:not(.eyeline){font-size:16px;line-height:1.84;max-width:690px;margin-bottom:14px}
+.intro .lead{color:var(--ink)}
+.section{padding:0 0 67px;scroll-margin-top:28px}
+.section-head{display:flex;align-items:baseline;justify-content:space-between;gap:24px;padding-bottom:17px;border-bottom:1px solid var(--ink)}
+.section h2{font-family:"Iowan Old Style","Palatino Linotype",Georgia,"Songti SC",serif;font-weight:500;font-size:29px;letter-spacing:-.03em;line-height:1.25;margin:0}
+.section-hint{font-size:12px;color:var(--muted);white-space:nowrap}
+.action-link{appearance:none;border:0;background:none;color:var(--muted);padding:0;font-size:12px;cursor:pointer;text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:4px}
+.action-link:hover{color:var(--accent)}
+.interactive-list{margin:0;padding:0}
+.entry{border-bottom:1px solid var(--line)}
+.entry summary{display:grid;grid-template-columns:minmax(0,1fr) 19px;align-items:center;gap:12px;cursor:pointer;list-style:none;padding:20px 11px 20px 0;transition:background-color .18s,padding .18s}
+.entry summary::-webkit-details-marker{display:none}
+.entry summary:hover{background:var(--tint);padding-left:11px}
+.entry[open] summary{padding-bottom:13px}
+.entry-title{display:block;color:var(--ink);font-size:16px;font-weight:610;letter-spacing:-.013em;line-height:1.5;transition:color .18s}
+.entry summary:hover .entry-title{color:var(--accent)}
+.entry-meta{font-size:12.5px;line-height:1.65;color:var(--muted);display:block;margin-top:5px}
+.sign{justify-self:end;width:17px;height:17px;position:relative;color:var(--muted)}
+.sign:before,.sign:after{content:"";position:absolute;background:currentColor;top:8px;left:2px;width:13px;height:1px;transition:transform .2s}
+.sign:after{transform:rotate(90deg)}.entry[open] .sign:after{transform:rotate(0)}
+.entry-details{padding:0 34px 23px 0;color:var(--body);font-size:14px;line-height:1.82;animation:unfold .2s ease}
+.entry-details p{margin:0 0 9px}.entry-details p:last-child{margin-bottom:0}
+.entry-details a{font-size:13px;font-weight:610;color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-soft)}
+.entry-details .authors{font-size:13px;color:var(--muted);line-height:1.75}
+.entry-details .authors strong{font-weight:700;color:var(--ink)}
+@keyframes unfold{from{opacity:0;transform:translateY(-3px)}to{opacity:1;transform:translateY(0)}}
+.publication summary{grid-template-columns:52px minmax(0,1fr) 19px;gap:11px;padding-top:17px;padding-bottom:18px}
+.publication summary:hover{padding-left:11px}
+.year{font-size:12px;line-height:1.7;color:var(--muted);align-self:start;padding-top:2px;font-variant-numeric:tabular-nums}
+.publication .entry-title{font-size:15px;font-weight:630}
+.publication .entry-details{padding-left:63px}
+.filterbar{display:flex;gap:19px;flex-wrap:wrap;margin:18px 0 5px}
+.filter{appearance:none;background:none;border:0;padding:2px 0 6px;cursor:pointer;font-size:12px;color:var(--muted);border-bottom:1px solid transparent;transition:color .15s,border-color .15s}
+.filter:hover{color:var(--ink)}
+.filter[aria-pressed="true"]{color:var(--ink);border-color:var(--accent);font-weight:680}
+.entry[hidden]{display:none!important}
+.work-note{color:var(--muted);font-size:12.5px;margin:22px 0 0}
+.heading-sub{display:block;color:var(--muted);font-size:12px;font-weight:500;margin-top:2px}
+.edu-row{display:grid;grid-template-columns:45px minmax(0,1fr) 115px;align-items:center;gap:16px;padding:22px 0;border-bottom:1px solid var(--line)}
+.edu-row img{width:44px;height:44px;object-fit:contain}
+.edu-school{color:var(--ink);font-weight:630;font-size:15px;line-height:1.4}
+.edu-degree{font-size:13px;color:var(--muted);margin-top:5px;line-height:1.7}
+.edu-date{text-align:right;color:var(--muted);font-size:12px;white-space:nowrap}
+.award-list{list-style:none;margin:0;padding:0}
+.award-list li{display:grid;grid-template-columns:69px 1fr;gap:15px;border-bottom:1px solid var(--line);padding:15px 0;font-size:13.5px;line-height:1.7}
+.award-list .award-year{color:var(--muted);font-size:12px;padding-top:2px}
+.contact-lead{font-family:"Iowan Old Style","Palatino Linotype",Georgia,serif;color:var(--ink);font-size:24px;line-height:1.4;margin:24px 0 8px}
+.contact-copy{font-size:14px;color:var(--muted);margin:0 0 14px}
+.contact-email{display:inline-block;font-size:16px;color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-soft);padding-bottom:3px}
+.footer{padding-top:24px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;color:var(--faint);font-size:12px}
+html[lang="en"] .zh,html[lang="zh-CN"] .en{display:none!important}
+@media(max-width:900px){.page{width:min(100% - 54px,800px);grid-template-columns:205px minmax(0,1fr);gap:52px}.portrait{width:159px;height:193px}.name{font-size:35px}.intro h2{font-size:41px}}
+@media(max-width:690px){.page{width:min(100% - 34px,590px);display:block;padding-top:28px}.sidebar{position:static;padding-bottom:0}.profile-top{display:grid;grid-template-columns:106px minmax(0,1fr);gap:22px;align-items:start}.portrait{width:106px;height:128px}.name{font-size:34px;margin:2px 0 2px}.chinese-name{margin-bottom:9px}.identity{font-size:12.5px}.side-nav{margin-top:22px;padding-top:14px;display:flex;flex-direction:row;flex-wrap:wrap;gap:10px 20px}.side-nav a{font-size:13px}.external{margin-top:15px}.preferences{margin-top:15px}.content{padding-top:41px}.intro{padding-bottom:49px}.intro h2{font-size:37px}.section{padding-bottom:48px}.edu-row{grid-template-columns:37px minmax(0,1fr);gap:11px}.edu-row img{width:36px;height:36px}.edu-date{grid-column:2;text-align:left}.publication .entry-details{padding-left:0}.publication summary{grid-template-columns:40px minmax(0,1fr) 17px}.footer{padding-bottom:30px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Zijian Li","alternateName":"李子健","url":"https://suiwan.github.io/zijian/","affiliation":{"@type":"CollegeOrUniversity","name":"Peking University"},"sameAs":["https://github.com/Suiwan","https://www.linkedin.com/in/zijian-li-4985043ab/","https://scholar.google.com/citations?user=z4GE5RYAAAAJ"],"knowsAbout":["AI in Education","Learning Analytics","LLM-Based Learner Simulation","Complex Problem Solving"]}</script>
 </head>
 <body>
-  <header class="site-header">
-    <div class="wrap topbar">
-      <a class="brand" href="#top">ZIJIAN LI <span>李子健</span></a>
-      <nav class="nav" aria-label="Main navigation">
-        <a href="#research"><span class="en">Research</span><span class="zh">研究</span></a>
-        <a href="#publications"><span class="en">Publications</span><span class="zh">成果</span></a>
-        <a href="#background"><span class="en">Background</span><span class="zh">学术背景</span></a>
-        <a href="#contact"><span class="en">Contact</span><span class="zh">联系</span></a>
-        <button id="language-toggle" type="button" aria-label="Change language">中文</button>
-      </nav>
+<div class="page" id="top">
+<aside class="sidebar" aria-label="Profile and navigation">
+  <div class="profile-top">
+    <img class="portrait" src="assets/portrait.jpg" width="178" height="217" alt="Portrait of Zijian Li" fetchpriority="high">
+    <div class="profile-text">
+      <h1 class="name">Zijian Li</h1>
+      <p class="chinese-name">李子健</p>
+      <p class="identity"><span class="en">Master's student in <strong>Educational Technology</strong><br>Peking University</span><span class="zh"><strong>北京大学</strong><br>教育技术学硕士研究生</span></p>
     </div>
-  </header>
+  </div>
+  <nav class="side-nav" aria-label="Sections">
+    <a href="#about" class="active"><span class="en">About</span><span class="zh">简介</span></a>
+    <a href="#research"><span class="en">Research</span><span class="zh">研究</span></a>
+    <a href="#publications"><span class="en">Publications</span><span class="zh">论文</span></a>
+    <a href="#education"><span class="en">Education</span><span class="zh">教育</span></a>
+    <a href="#contact"><span class="en">Contact</span><span class="zh">联系</span></a>
+  </nav>
+  <div class="external" aria-label="External profiles">
+    <a href="mailto:zijianli@stu.pku.edu.cn">Email ↗</a>
+    <a href="https://scholar.google.com/citations?user=z4GE5RYAAAAJ" target="_blank" rel="noopener noreferrer">Scholar ↗</a>
+    <a href="https://github.com/Suiwan" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+    <a href="https://www.linkedin.com/in/zijian-li-4985043ab/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+  </div>
+  <div class="preferences">
+    <button class="pref-btn" id="language-toggle" type="button" aria-label="Switch language">中文</button>
+    <button class="pref-btn theme" id="theme-toggle" type="button" aria-label="Switch to dark theme" title="Toggle color theme">☾</button>
+  </div>
+</aside>
+<main class="content">
+  <section class="intro" id="about">
+    <p class="eyeline"><span class="en">About me</span><span class="zh">关于我</span></p>
+    <h2><span class="en">I study how people learn and reason with AI.</span><span class="zh">我关注 AI 参与时，人们如何学习与推理。</span></h2>
+    <p class="lead en">I'm a master's student at Peking University's Graduate School of Education, advised by <strong>Prof. Yizhou Fan</strong>.</p>
+    <p class="lead zh">我是北京大学教育学院教育技术系硕士研究生，导师为<strong>范逸洲老师</strong>。</p>
+    <p class="en">My research is concerned with LLM-based learner simulation, complex problem solving and learning analytics. I build and study AI-supported learning environments, using traces of learners' decisions and interactions to understand how their reasoning develops over time.</p>
+    <p class="zh">我的研究围绕大语言模型模拟学习者、复杂问题解决与学习分析展开。我参与开发 AI 支持的学习环境，并通过学习者的决策与交互记录分析推理过程如何随时间变化。</p>
+  </section>
 
-  <main id="top">
-    <section class="hero wrap" aria-labelledby="page-title">
-      <div>
-        <p class="eyebrow"><span class="en">Peking University · Graduate School of Education</span><span class="zh">北京大学 · 教育学院</span></p>
-        <h1 id="page-title">Zijian Li <span class="cname">李子健</span></h1>
-        <p class="tagline"><span class="en">Understanding how people learn, reason, and solve complex problems with AI.</span><span class="zh">探索人们如何在人工智能支持下学习、推理与解决复杂问题。</span></p>
-        <p class="intro en">I am a master's student in Educational Technology at Peking University, advised by <strong>Prof. Yizhou Fan</strong>. My research connects learning sciences with computational methods to examine how learners interact with AI. My interests include <strong>LLM-based learner simulation</strong>, learning analytics, complex problem solving, and how AI feedback influences reasoning and self-regulated learning.</p>
-        <p class="intro zh">我是北京大学教育学院教育技术系硕士研究生，导师为<strong>范逸洲老师</strong>。我的研究结合学习科学与计算方法，关注学习者与 AI 的交互过程，包括<strong>基于大语言模型的学习者模拟</strong>、学习分析、复杂问题解决，以及 AI 反馈如何影响推理与自我调节学习。</p>
-        <div class="hero-links">
-          <a href="mailto:zijianli@stu.pku.edu.cn"><span class="en">Email</span><span class="zh">邮箱</span></a>
-          <a href="https://www.linkedin.com/in/zijian-li-4985043ab/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-          <a href="https://scholar.google.com/citations?user=z4GE5RYAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar ↗</a>
-          <a href="https://github.com/Suiwan" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-        </div>
-        <div class="hero-note"><span class="en"><strong>LAK 2026</strong> · Best Full Paper Nominee (first author)</span><span class="zh"><strong>LAK 2026</strong> · 最佳全文论文提名（第一作者）</span></div>
-      </div>
-      <!-- Upload the exact selected photo to assets/profile.jpg to display it.
-           Hide the slot until that file is available to avoid a broken image. -->
-      <div class="photo-slot" data-empty="true" aria-label="Profile photo area">
-        <span class="photo-initials" aria-hidden="true">ZL</span>
-        <img id="profile-photo" src="assets/profile.jpg" width="184" height="225" alt="Portrait of Zijian Li" decoding="async">
-      </div>
-    </section>
-
-    <div class="band">
-      <section class="section wrap" id="research">
-        <div class="section-head">
-          <h2><span class="en">Research</span><span class="zh">研究工作</span></h2>
-          <p class="section-desc en">Ongoing and completed projects across learner modeling, learning-process analytics, and AI-supported educational environments.</p>
-          <p class="section-desc zh">围绕学习者建模、学习过程分析与 AI 支持的学习环境展开的研究。</p>
-        </div>
-        <div class="research-grid">
-          <article class="research-card">
-            <div class="research-status"><span class="en">Master's thesis · In progress</span><span class="zh">硕士毕业论文 · 进行中</span></div>
-            <h3 class="en">LLM-Based Learner Simulation for Complex Problem Solving</h3>
-            <h3 class="zh">基于大语言模型的复杂问题解决学习者模拟</h3>
-            <p class="en">Exploring API-based LLM agents for simulating variation in learners' problem-solving processes, without fine-tuning. Current work focuses on learner-role settings and process-level validation.</p>
-            <p class="zh">探索在不微调模型的情况下，使用 API 调用的大语言模型模拟不同学习者的复杂问题解决过程。目前重点研究学习者角色设定与过程层面的模拟验证。</p>
-          </article>
-          <article class="research-card">
-            <div class="research-status"><span class="en">Manuscript in preparation</span><span class="zh">论文写作中</span></div>
-            <h3 class="en">Hypothesis-Space Development in AI-Supported Clinical Reasoning</h3>
-            <h3 class="zh">AI 支持的临床推理中假设空间的发展</h3>
-            <p class="en">Examining 385 learner–case trajectories from 121 medical students, using ranked diagnostic hypotheses, textual evidence, semantic embeddings, and feedback records to study hypothesis revisions as information unfolds.</p>
-            <p class="zh">分析来自 121 名医学生的 385 条任务轨迹，将诊断假设排序、文本证据、语义向量与 AI 反馈记录结合起来，研究新信息逐步呈现时假设如何变化。</p>
-          </article>
-          <article class="research-card">
-            <div class="research-status"><span class="en">Published · First-author LAK 2026</span><span class="zh">已发表 · LAK 2026 第一作者</span></div>
-            <h3 class="en">Reliable LLM Coding and Human–AI Collaborative Learning Analytics</h3>
-            <h3 class="zh">可靠的 LLM 编码与人机协同学习分析</h3>
-            <p class="en">Comparing LLMs and smaller classifiers for theory-driven dialogue coding, identifying systematic errors in rare categories, and evaluating a human-in-the-loop coding workflow.</p>
-            <p class="zh">比较大语言模型和小型分类模型在理论驱动对话编码中的表现，分析稀有类别的系统性错误，并评估人机协作编码流程。</p>
-            <a href="https://doi.org/10.1145/3785022.3785130" target="_blank" rel="noopener noreferrer"><span class="en">Read the paper ↗</span><span class="zh">阅读论文 ↗</span></a>
-          </article>
-          <article class="research-card">
-            <div class="research-status"><span class="en">Platform development · Empirical research</span><span class="zh">学习环境开发 · 实证研究</span></div>
-            <h3 class="en">Multi-Agent Clinical Reasoning Learning Environment</h3>
-            <h3 class="zh">多智能体临床推理学习环境</h3>
-            <p class="en">Co-developing an environment with virtual patients, examination reporters, conversational assistance, and structured teaching feedback. The platform also records learners' diagnostic choices and reasoning processes.</p>
-            <p class="zh">参与研发融合虚拟病人、检查汇报员、对话式助手和结构化带教反馈的学习环境，并记录学生的诊断选择与推理过程，以支持学习分析。</p>
-          </article>
-        </div>
-        <div class="topics" aria-label="Research topics">
-          <span class="topic">AI in Education</span><span class="topic">Learning Analytics</span><span class="topic">Learner Simulation</span><span class="topic">Complex Problem Solving</span><span class="topic">Metacognition &amp; SRL</span>
-        </div>
-      </section>
+  <section class="section" id="research">
+    <div class="section-head"><h2><span class="en">Research</span><span class="zh">研究工作</span></h2><button class="action-link expand-all" type="button" data-target="research-list"><span class="en">Expand all</span><span class="zh">展开全部</span></button></div>
+    <div class="interactive-list" id="research-list">
+      <details class="entry research-item">
+        <summary><span><span class="entry-title">LLM-Based Learner Simulation for Complex Problem Solving</span><span class="entry-meta"><span class="en">Master's thesis, in progress</span><span class="zh">硕士毕业论文，进行中</span></span></span><span class="sign" aria-hidden="true"></span></summary>
+        <div class="entry-details"><p class="en">I'm exploring how API-based language models can simulate differences in learners' approaches to complex problem solving without fine-tuning. Current work involves learner-role configurations and process-level evaluation. This is an ongoing study.</p><p class="zh">探索在不微调模型的条件下，如何通过 API 调用的大语言模型模拟不同学习者的复杂问题解决过程。目前正在探索学习者角色设定与过程层面的验证方法。</p></div>
+      </details>
+      <details class="entry research-item">
+        <summary><span><span class="entry-title">Hypothesis-Space Development in AI-Supported Clinical Reasoning</span><span class="entry-meta"><span class="en">Research manuscript in preparation</span><span class="zh">研究论文写作中</span></span></span><span class="sign" aria-hidden="true"></span></summary>
+        <div class="entry-details"><p class="en">Using 385 case trajectories from 121 medical students, this study follows how ranked diagnostic hypotheses, written evidence and candidate sets change as new information appears. Embedding-based comparisons and transition analyses help examine how revisions relate to different forms of AI feedback.</p><p class="zh">基于 121 名医学生的 385 条病例轨迹，分析新信息逐步呈现时诊断假设排序、文本证据与候选集合的变化。结合语义向量和状态转移分析，研究修订行为与不同 AI 反馈之间的关系。</p></div>
+      </details>
+      <details class="entry research-item">
+        <summary><span><span class="entry-title">Reliable LLM Coding and Human–AI Collaborative Learning Analytics</span><span class="entry-meta"><span class="en">First-author research, LAK 2026</span><span class="zh">LAK 2026 第一作者研究</span></span></span><span class="sign" aria-hidden="true"></span></summary>
+        <div class="entry-details"><p class="en">Compared LLMs with fine-tuned classifiers on deductive dialogue coding, investigated errors on infrequent categories and evaluated selective human review as part of a collaborative coding workflow.</p><p class="zh">比较大语言模型和经过微调的分类模型在演绎式对话编码中的表现，分析低频类别的识别问题，评估选择性人工复核的人机协作编码流程。</p><a href="https://doi.org/10.1145/3785022.3785130" target="_blank" rel="noopener noreferrer"><span class="en">Read the paper ↗</span><span class="zh">阅读论文 ↗</span></a></div>
+      </details>
+      <details class="entry research-item">
+        <summary><span><span class="entry-title">Multi-Agent Clinical Reasoning Learning Environment</span><span class="entry-meta"><span class="en">Learning environment development and empirical research</span><span class="zh">学习环境开发与实证研究</span></span></span><span class="sign" aria-hidden="true"></span></summary>
+        <div class="entry-details"><p class="en">Co-designed and developed a learning platform with virtual patients, examination reporters, an AI assistant and structured teaching feedback. The environment records diagnostic choices, reasoning and reflections for learning-process analysis.</p><p class="zh">参与研发包含虚拟病人、检查汇报员、AI 助手和结构化带教反馈的学习平台，记录诊断选择、推理过程与反思内容，用于学习过程分析。</p></div>
+      </details>
     </div>
+  </section>
 
-    <section class="section wrap" id="publications">
-      <div class="section-head">
-        <h2><span class="en">Publications</span><span class="zh">学术成果</span></h2>
-        <p class="section-desc en">Published works and accepted manuscripts. My name is highlighted in the author lists.</p>
-        <p class="section-desc zh">已正式发表及已录用的成果。作者列表中加粗标出我的姓名。</p>
-      </div>
-      <h3 class="minor-title"><span class="en">Accepted manuscript</span><span class="zh">已录用论文</span></h3>
-      <div class="pub-list">
-        <article class="publication">
-          <div class="pub-year">2026</div>
-          <div>
-            <p class="pub-kind"><span class="en">Journal article · Accepted</span><span class="zh">期刊论文 · 已录用</span></p>
-            <p class="pub-title">Beyond Socratic Questioning: Designing GenAI-mediated Metacognitive Scaffolding for Clinical Reasoning in Medical Education</p>
-            <p class="pub-authors">Naping Chen, Xiaoyu Zhao, Luzhen Tang, Mengyu Xia, <strong>Zijian Li</strong>, Jiaqi Xu, Xinyu Li, Mingxue Xu, Liping Lv, Oudong Xia, Changmin Lin, Ligia Maria Cayres Ribeiro, Marco Antonio de Carvalho Filho, Dragan Gašević, Danijela Gasevic, Yizhou Fan.</p>
-            <p class="pub-venue"><em>npj Digital Medicine</em> — accepted for publication (preprint linked; journal DOI forthcoming).</p>
-            <div class="pub-links"><a href="https://doi.org/10.21203/rs.3.rs-10472890/v1" target="_blank" rel="noopener noreferrer"><span class="en">Preprint ↗</span><span class="zh">预印本 ↗</span></a></div>
-          </div>
-        </article>
-      </div>
-      <h3 class="minor-title"><span class="en">Published works</span><span class="zh">已发表成果</span></h3>
-      <div class="pub-list">
-        <article class="publication">
-          <div class="pub-year">2026</div>
-          <div>
-            <p class="pub-kind"><span class="en">Conference full paper · First author</span><span class="zh">国际会议全文 · 第一作者</span></p>
-            <p class="pub-title">When LLMs Fall Short in Deductive Coding: Model Comparisons and Human–AI Collaboration Workflow Design</p>
-            <p class="pub-authors"><strong>Zijian Li</strong>, Luzhen Tang, Mengyu Xia, Xinyu Li, Naping Chen, Dragan Gašević, Yizhou Fan.</p>
-            <p class="pub-venue">Proceedings of the 16th International Conference on Learning Analytics &amp; Knowledge (LAK 2026), pp. 685–696. <strong>Best Full Paper Nominee.</strong></p>
-            <div class="pub-links"><a href="https://doi.org/10.1145/3785022.3785130" target="_blank" rel="noopener noreferrer">DOI ↗</a><a href="https://arxiv.org/abs/2512.21041" target="_blank" rel="noopener noreferrer">arXiv ↗</a></div>
-          </div>
-        </article>
-        <article class="publication">
-          <div class="pub-year">2026</div>
-          <div>
-            <p class="pub-kind"><span class="en">Journal article · Third author</span><span class="zh">期刊论文 · 第三作者</span></p>
-            <p class="pub-title">Designing a Multi-Agent Collaborative Learning Environment for Complex Problem Solving: A Design-Based Study</p>
-            <p class="pub-authors">Jiaqi Xu, Luzhen Tang, <strong>Zijian Li</strong>, Naping Chen, Yizhou Fan.</p>
-            <p class="pub-venue">Journal of Distance Education (远程教育杂志), 44(2), 30–42+13. [In Chinese]</p>
-            <div class="pub-links"><a href="https://doi.org/10.15881/j.cnki.cn33-1304/g4.2026.02.004" target="_blank" rel="noopener noreferrer">DOI ↗</a></div>
-          </div>
-        </article>
-        <article class="publication">
-          <div class="pub-year">2026</div>
-          <div>
-            <p class="pub-kind"><span class="en">Journal article · Fifth author</span><span class="zh">期刊论文 · 第五作者</span></p>
-            <p class="pub-title">Developing and Validating a Coding Scheme for Clinical Reasoning in History Taking Using Generative AI-Based Virtual Patients: Systematic Text Condensation Approach</p>
-            <p class="pub-authors">Naping Chen, Luzhen Tang, Yiqing Liu, Changmin Lin, <strong>Zijian Li</strong>, Cheng Shi, Mengyu Xia, Dragan Gašević, Danijela Gašević, Junjie Zheng, Yizhou Fan, Xinyu Li.</p>
-            <p class="pub-venue">JMIR Medical Education, 12, e84347.</p>
-            <div class="pub-links"><a href="https://doi.org/10.2196/84347" target="_blank" rel="noopener noreferrer">DOI ↗</a></div>
-          </div>
-        </article>
-        <article class="publication">
-          <div class="pub-year">2025</div>
-          <div>
-            <p class="pub-kind"><span class="en">Journal article · Third author</span><span class="zh">期刊论文 · 第三作者</span></p>
-            <p class="pub-title">Breaking Human Dominance: Investigating Learners' Preferences for Learning Feedback from Generative AI and Human Tutors</p>
-            <p class="pub-authors">Huy Le, Yuxin Shen, <strong>Zijian Li</strong>, Mengyu Xia, Luzhen Tang, Xinyu Li, Jiahui Jia, Qian Wang, Dragan Gašević, Yizhou Fan.</p>
-            <p class="pub-venue">British Journal of Educational Technology, 56(5), 1758–1783.</p>
-            <div class="pub-links"><a href="https://doi.org/10.1111/bjet.13614" target="_blank" rel="noopener noreferrer">DOI ↗</a></div>
-          </div>
-        </article>
-        <article class="publication">
-          <div class="pub-year">2025</div>
-          <div>
-            <p class="pub-kind"><span class="en">Book chapter · First author</span><span class="zh">学术著作章节 · 第一作者</span></p>
-            <p class="pub-title">How GenAI Affects Metacognition in Self-Regulated Learning: Between Enhancement and Inhibition</p>
-            <p class="pub-authors"><strong>Zijian Li</strong>, Yizhou Fan.</p>
-            <p class="pub-venue">In <em>Learning with Generative Artificial Intelligence</em>, pp. 148–177. Routledge.</p>
-            <div class="pub-links"><a href="https://doi.org/10.4324/9781003632146-6" target="_blank" rel="noopener noreferrer">DOI ↗</a></div>
-          </div>
-        </article>
-      </div>
-      <div class="status-note">
-        <span class="en"><strong>Work under review:</strong> Two co-authored research papers have been submitted to LAK 2027 (one full paper and one short paper). Their titles and author identities are not listed here during double-blind review.</span>
-        <span class="zh"><strong>在审研究：</strong>另有两篇合著论文投稿至 LAK 2027（一篇 Full Paper、一篇 Short Paper）。双盲评审期间，暂不在公开主页列出题目及作者信息。</span>
-      </div>
-    </section>
+  <section class="section" id="publications">
+    <div class="section-head"><h2><span class="en">Publications</span><span class="zh">学术成果</span></h2><button class="action-link expand-all" type="button" data-target="publication-list"><span class="en">Expand all</span><span class="zh">展开全部</span></button></div>
+    <div class="filterbar" role="group" aria-label="Filter publications">
+      <button class="filter" type="button" aria-pressed="true" data-filter="all"><span class="en">All</span><span class="zh">全部</span></button>
+      <button class="filter" type="button" aria-pressed="false" data-filter="journal"><span class="en">Journal articles</span><span class="zh">期刊论文</span></button>
+      <button class="filter" type="button" aria-pressed="false" data-filter="conference"><span class="en">Conference papers</span><span class="zh">会议论文</span></button>
+      <button class="filter" type="button" aria-pressed="false" data-filter="book"><span class="en">Book chapters</span><span class="zh">著作章节</span></button>
+    </div>
+    <div class="interactive-list" id="publication-list">
+      <details class="entry publication" data-type="journal">
+        <summary><span class="year">2026</span><span><span class="entry-title">Beyond Socratic Questioning: Designing GenAI-mediated Metacognitive Scaffolding for Clinical Reasoning in Medical Education</span><span class="entry-meta"><em>npj Digital Medicine</em> — <span class="en">Accepted</span><span class="zh">已录用</span></span></span><span class="sign" aria-hidden="true"></span></summary>
+        <div class="entry-details"><p class="authors">Naping Chen, Xiaoyu Zhao, Luzhen Tang, Mengyu Xia, <strong>Zijian Li</strong>, Jiaqi Xu, Xinyu Li, Mingxue Xu, Liping Lv, Oudong Xia, Changmin Lin, Ligia Maria Cayres Ribeiro, Marco Antonio de Carvalho Filho, Dragan Gašević, Danijela Gašević, Yizhou Fan.</p><p class="en">A study of GenAI-mediated metacognitive scaffolding to support medical students' clinical reasoning. Accepted for publication; the linked version is a preprint.</p><p class="zh">研究生成式 AI 介导的元认知支架如何支持医学生的临床推理。论文已录用；下方链接为预印本。</p><a href="https://doi.org/10.21203/rs.3.rs-10472890/v1" target="_blank" rel="noopener noreferrer"><span class="en">Preprint ↗</span><span class="zh">预印本 ↗</span></a></div>
+      </details>
+      <details class="entry publication" data-type="conference">
+        <summary><span class="year">2026</span><span><span class="entry-title">When LLMs Fall Short in Deductive Coding: Model Comparisons and Human–AI Collaboration Workflow Design</span><span class="entry-meta">LAK 2026 — Best Full Paper Nominee</span></span><span class="sign" aria-hidden="true"></span></summary>
+        <div class="entry-details"><p class="authors"><strong>Zijian Li</strong>, Luzhen Tang, Mengyu Xia, Xinyu Li, Naping Chen, Dragan Gašević, Yizhou Fan.</p><p class="en">A comparative study of LLMs and fine-tuned models in theory-driven dialogue coding, followed by the design and evaluation of a human–AI collaborative workflow. Proceedings of LAK 2026, pp. 685–696.</p><p class="zh">比较大语言模型与微调模型在理论驱动对话编码中的表现，并设计和评估人机协作编码流程。LAK 2026 论文集，第 685–696 页。</p><a href="https://doi.org/10.1145/3785022.3785130" target="_blank" rel="noopener noreferrer">DOI ↗</a></div>
+      </details>
+      <details class="entry publication" data-type="journal">
+        <summary><span class="year">2026</span><span><span class="entry-title">Designing a Multi-Agent Collaborative Learning Environment for Complex Problem Solving: A Design-Based Study</span><span class="entry-meta">Journal of Distance Education (远程教育杂志)</span></span><span class="sign" aria-hidden="true"></span></summary>
+        <div class="entry-details"><p class="authors">Jiaqi Xu, Luzhen Tang, <strong>Zijian Li</strong>, Naping Chen, Yizhou Fan.</p><p class="en">A design-based study of a collaborative multi-agent learning environment for complex problem solving. In Chinese, 44(2), 30–42+13.</p><p class="zh">围绕复杂问题解决任务，采用设计研究方法构建多智能体协同学习环境。《远程教育杂志》44(2)，30–42+13。</p><a href="https://doi.org/10.15881/j.cnki.cn33-1304/g4.2026.02.004" target="_blank" rel="noopener noreferrer">DOI ↗</a></div>
+      </details>
+      <details class="entry publication" data-type="journal">
+        <summary><span class="year">2026</span><span><span class="entry-title">Developing and Validating a Coding Scheme for Clinical Reasoning in History Taking Using Generative AI-Based Virtual Patients: Systematic Text Condensation Approach</span><span class="entry-meta">JMIR Medical Education, 12, e84347</span></span><span class="sign" aria-hidden="true"></span></summary>
+        <div class="entry-details"><p class="authors">Naping Chen, Luzhen Tang, Yiqing Liu, Changmin Lin, <strong>Zijian Li</strong>, Cheng Shi, Mengyu Xia, Dragan Gašević, Danijela Gašević, Junjie Zheng, Yizhou Fan, Xinyu Li.</p><p class="en">Developing and validating a coding scheme to examine clinical reasoning during simulated history taking with generative AI virtual patients.</p><p class="zh">针对生成式 AI 虚拟病人问诊过程中的临床推理，开发和验证分析编码框架。</p><a href="https://doi.org/10.2196/84347" target="_blank" rel="noopener noreferrer">DOI ↗</a></div>
+      </details>
+      <details class="entry publication" data-type="journal">
+        <summary><span class="year">2025</span><span><span class="entry-title">Breaking Human Dominance: Investigating Learners' Preferences for Learning Feedback from Generative AI and Human Tutors</span><span class="entry-meta">British Journal of Educational Technology, 56(5), 1758–1783</span></span><span class="sign" aria-hidden="true"></span></summary>
+        <div class="entry-details"><p class="authors">Huy Le, Yuxin Shen, <strong>Zijian Li</strong>, Mengyu Xia, Luzhen Tang, Xinyu Li, Jiahui Jia, Qian Wang, Dragan Gašević, Yizhou Fan.</p><p class="en">Investigating how learners' preferences for human-tutor and GenAI feedback differ across feedback interfaces and learning conditions.</p><p class="zh">研究不同反馈界面和学习条件下，学习者对人类导师与生成式 AI 反馈的偏好及其变化。</p><a href="https://doi.org/10.1111/bjet.13614" target="_blank" rel="noopener noreferrer">DOI ↗</a></div>
+      </details>
+      <details class="entry publication" data-type="book">
+        <summary><span class="year">2025</span><span><span class="entry-title">How GenAI Affects Metacognition in Self-Regulated Learning: Between Enhancement and Inhibition</span><span class="entry-meta">Learning with Generative Artificial Intelligence, Routledge</span></span><span class="sign" aria-hidden="true"></span></summary>
+        <div class="entry-details"><p class="authors"><strong>Zijian Li</strong>, Yizhou Fan.</p><p class="en">A book chapter considering how generative AI can support or inhibit metacognitive processes in self-regulated learning. Pages 148–177.</p><p class="zh">讨论生成式 AI 对自我调节学习中元认知过程的促进与抑制，以及可能引发的过度依赖问题。第 148–177 页。</p><a href="https://doi.org/10.4324/9781003632146-6" target="_blank" rel="noopener noreferrer">DOI ↗</a></div>
+      </details>
+    </div>
+    <p class="work-note en">Two additional co-authored manuscripts are under review at LAK 2027. Titles are withheld during double-blind review.</p>
+    <p class="work-note zh">另有两篇合著论文正在 LAK 2027 双盲评审中，暂不公开题目。</p>
+  </section>
 
-    <div class="band">
-      <section class="section wrap" id="background">
-        <div class="section-head">
-          <h2><span class="en">Background</span><span class="zh">学术背景</span></h2>
-        </div>
-        <div class="background-grid">
-          <div>
-            <h3 class="background-title"><span class="en">Education</span><span class="zh">教育经历</span></h3>
-            <div class="edu">
-              <img class="school-logo" src="https://upload.wikimedia.org/wikipedia/commons/f/f4/Peking_University_seal.svg" width="65" height="65" loading="lazy" decoding="async" alt="Peking University emblem">
-              <div>
-                <p class="edu-name"><span class="en">Peking University</span><span class="zh">北京大学</span></p>
-                <p class="edu-detail en">M.A. in Educational Technology · Graduate School of Education</p>
-                <p class="edu-detail zh">教育技术学硕士 · 教育学院</p>
-                <p class="edu-date">Sep 2024 – Jun 2027 (expected)</p>
-              </div>
-            </div>
-            <div class="edu">
-              <img class="school-logo" src="https://www.ecnu.edu.cn/images/fx300.jpg" width="65" height="65" loading="lazy" decoding="async" alt="East China Normal University emblem">
-              <div>
-                <p class="edu-name"><span class="en">East China Normal University</span><span class="zh">华东师范大学</span></p>
-                <p class="edu-detail en">Dual bachelor's degrees · Educational Technology &amp; Computer Science and Technology</p>
-                <p class="edu-detail zh">教育技术学与计算机科学与技术双学士学位</p>
-                <p class="edu-date">Sep 2020 – Jun 2024</p>
-              </div>
-            </div>
-            <h3 class="background-title"><span class="en">Academic service</span><span class="zh">学术服务</span></h3>
-            <ul class="simple-list">
-              <li class="en">Reviewer, International Conference on Learning Analytics &amp; Knowledge (LAK 2027)</li>
-              <li class="zh">学习分析与知识国际会议 LAK 2027 审稿人</li>
-            </ul>
-          </div>
-          <div>
-            <h3 class="background-title"><span class="en">Selected honors</span><span class="zh">代表性荣誉</span></h3>
-            <ul class="simple-list">
-              <li class="en"><strong>Best Full Paper Nominee</strong>, LAK 2026 (first author)</li>
-              <li class="zh"><strong>最佳全文论文提名</strong>，LAK 2026（第一作者）</li>
-              <li class="en">National Scholarship for Graduate Students, Peking University (2026)</li>
-              <li class="zh">北京大学研究生国家奖学金（2026）</li>
-              <li class="en">Global Silver Award, Global Digital Education Innovation Competition, AI for Learning track (2025)</li>
-              <li class="zh">全球数智教育创新大赛 AI for Learning 赛道全球银奖（2025）</li>
-              <li class="en">National Scholarship for Undergraduates; Shanghai Outstanding Graduate</li>
-              <li class="zh">本科生国家奖学金；上海市优秀毕业生</li>
-            </ul>
-            <h3 class="background-title"><span class="en">Research methods &amp; tools</span><span class="zh">研究方法与工具</span></h3>
-            <div class="topics">
-              <span class="topic">Learning process analytics</span><span class="topic">Sequence analysis</span>
-              <span class="topic">Process mining</span><span class="topic">LLM evaluation</span>
-              <span class="topic">Text embeddings</span><span class="topic">Python / R / SQL</span>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-  </main>
-  <footer class="site-footer" id="contact">
-    <div class="wrap footer-inner">
-      <span>© 2026 Zijian Li · <span class="en">Last updated: October 2026</span><span class="zh">最近更新：2026 年 10 月</span></span>
-      <span>
-        <a href="mailto:zijianli@stu.pku.edu.cn">Email</a> ·
-        <a href="https://www.linkedin.com/in/zijian-li-4985043ab/" target="_blank" rel="noopener noreferrer">LinkedIn</a> ·
-        <a href="#top"><span class="en">Back to top ↑</span><span class="zh">返回顶部 ↑</span></a>
-      </span>
-    </div>
-  </footer>
-  <script>
-    (function () {
-      var toggle = document.getElementById('language-toggle');
-      var root = document.documentElement;
-      var photo = document.getElementById('profile-photo');
-      var photoSlot = photo.closest('.photo-slot');
-      photo.addEventListener('load', function () {
-        if (photo.naturalWidth > 0) photoSlot.dataset.empty = 'false';
-      });
-      photo.addEventListener('error', function () { photoSlot.dataset.empty = 'true'; });
-      if (photo.complete && photo.naturalWidth > 0) photoSlot.dataset.empty = 'false';
-      function setLanguage(language) {
-        root.lang = language === 'zh-CN' ? 'zh-CN' : 'en';
-        toggle.textContent = root.lang === 'en' ? '中文' : 'English';
-        toggle.setAttribute('aria-label', root.lang === 'en' ? 'Switch to Chinese' : 'Switch to English');
-        try { localStorage.setItem('zijian-site-language', root.lang); } catch (error) {}
-      }
-      var savedLanguage;
-      try { savedLanguage = localStorage.getItem('zijian-site-language'); } catch (error) {}
-      setLanguage(savedLanguage === 'zh-CN' ? 'zh-CN' : 'en');
-      toggle.addEventListener('click', function () { setLanguage(root.lang === 'en' ? 'zh-CN' : 'en'); });
-    })();
-  </script>
+  <section class="section" id="education">
+    <div class="section-head"><h2><span class="en">Education</span><span class="zh">教育背景</span></h2></div>
+    <div class="edu-row"><img src="assets/pku.png" width="44" height="44" alt="Peking University seal" loading="lazy"><div><div class="edu-school"><span class="en">Peking University</span><span class="zh">北京大学</span></div><div class="edu-degree en">M.A. in Educational Technology, Graduate School of Education</div><div class="edu-degree zh">教育技术学硕士，教育学院</div></div><div class="edu-date">2024–2027 <span class="en">(expected)</span><span class="zh">（预计）</span></div></div>
+    <div class="edu-row"><img src="assets/ecnu.png" width="44" height="44" alt="East China Normal University seal" loading="lazy"><div><div class="edu-school"><span class="en">East China Normal University</span><span class="zh">华东师范大学</span></div><div class="edu-degree en">Dual bachelor's degrees in Educational Technology and Computer Science and Technology</div><div class="edu-degree zh">教育技术学与计算机科学与技术双学士学位</div></div><div class="edu-date">2020–2024</div></div>
+  </section>
+
+  <section class="section" id="honors">
+    <div class="section-head"><h2><span class="en">Selected honors &amp; service</span><span class="zh">代表性荣誉与学术服务</span></h2></div>
+    <ul class="award-list">
+      <li><span class="award-year">2026</span><span class="en">Best Full Paper Nominee, International Conference on Learning Analytics &amp; Knowledge (LAK 2026)</span><span class="zh">LAK 2026 最佳全文论文提名</span></li>
+      <li><span class="award-year">2026</span><span class="en">National Scholarship for Graduate Students, Peking University</span><span class="zh">北京大学研究生国家奖学金</span></li>
+      <li><span class="award-year">2025</span><span class="en">Global Silver Award, Global Digital Education Innovation Competition (AI for Learning track)</span><span class="zh">全球数智教育创新大赛 AI for Learning 赛道全球银奖</span></li>
+      <li><span class="award-year">2024</span><span class="en">Shanghai Outstanding Graduate, East China Normal University</span><span class="zh">华东师范大学上海市优秀毕业生</span></li>
+      <li><span class="award-year">2027</span><span class="en">Reviewer, International Conference on Learning Analytics &amp; Knowledge (LAK 2027)</span><span class="zh">LAK 2027 学术审稿人</span></li>
+    </ul>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="section-head"><h2><span class="en">Contact</span><span class="zh">联系</span></h2></div>
+    <p class="contact-lead en">I'm always glad to discuss research ideas.</p>
+    <p class="contact-lead zh">欢迎交流研究想法。</p>
+    <p class="contact-copy en">For research correspondence, please email me at my university address.</p>
+    <p class="contact-copy zh">学术交流可通过北京大学邮箱联系我。</p>
+    <a class="contact-email" href="mailto:zijianli@stu.pku.edu.cn">zijianli@stu.pku.edu.cn ↗</a>
+  </section>
+  <footer class="footer"><span>© 2026 Zijian Li</span><a href="#top"><span class="en">Back to top ↑</span><span class="zh">返回顶部 ↑</span></a></footer>
+</main>
+</div>
+<script>
+(function(){
+  const root=document.documentElement;
+  const langBtn=document.getElementById('language-toggle');
+  const themeBtn=document.getElementById('theme-toggle');
+  const getStored=(k)=>{try{return localStorage.getItem(k)}catch(_){return null}};
+  const setStored=(k,v)=>{try{localStorage.setItem(k,v)}catch(_){}};
+  function setLanguage(v){root.lang=v==='zh-CN'?'zh-CN':'en';langBtn.textContent=root.lang==='en'?'中文':'English';langBtn.setAttribute('aria-label',root.lang==='en'?'Switch to Chinese':'切换为英文');document.title=root.lang==='en'?'Zijian Li | Academic Homepage':'李子健 | 个人学术主页';setStored('zijian-lang',root.lang);updateExpandLabels()}
+  function setTheme(v){root.dataset.theme=v==='dark'?'dark':'light';themeBtn.textContent=v==='dark'?'☀':'☾';themeBtn.setAttribute('aria-label',v==='dark'?'Switch to light theme':'Switch to dark theme');setStored('zijian-theme',root.dataset.theme)}
+  function updateExpandLabels(){document.querySelectorAll('.expand-all').forEach(btn=>{const container=document.getElementById(btn.dataset.target);const ds=[...container.querySelectorAll('details:not([hidden])')];const all=ds.length>0&&ds.every(d=>d.open);btn.querySelector('.en').textContent=all?'Collapse all':'Expand all';btn.querySelector('.zh').textContent=all?'全部收起':'展开全部'})}
+  setLanguage(getStored('zijian-lang')==='zh-CN'?'zh-CN':'en');
+  setTheme(getStored('zijian-theme')==='dark'?'dark':'light');
+  langBtn.addEventListener('click',()=>setLanguage(root.lang==='en'?'zh-CN':'en'));
+  themeBtn.addEventListener('click',()=>setTheme(root.dataset.theme==='light'?'dark':'light'));
+  document.querySelectorAll('.interactive-list details').forEach(d=>d.addEventListener('toggle',updateExpandLabels));
+  document.querySelectorAll('.expand-all').forEach(btn=>btn.addEventListener('click',()=>{const ds=[...document.getElementById(btn.dataset.target).querySelectorAll('details:not([hidden])')];const shouldOpen=!ds.every(d=>d.open);ds.forEach(d=>d.open=shouldOpen);updateExpandLabels()}));
+  document.querySelectorAll('.filter').forEach(btn=>btn.addEventListener('click',()=>{const type=btn.dataset.filter;document.querySelectorAll('.filter').forEach(b=>b.setAttribute('aria-pressed',String(b===btn)));document.querySelectorAll('.publication').forEach(item=>{item.hidden=type!=='all'&&item.dataset.type!==type;if(item.hidden)item.open=false});updateExpandLabels()}));
+  if('IntersectionObserver' in window){const navs=[...document.querySelectorAll('.side-nav a')];const observer=new IntersectionObserver((entries)=>{const active=entries.filter(x=>x.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];if(active)navs.forEach(a=>{const on=a.getAttribute('href')==='#'+active.target.id;a.classList.toggle('active',on);if(on)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current')})},{rootMargin:'-20% 0px -55% 0px',threshold:[0,.1,.5]});['about','research','publications','education','contact'].forEach(id=>{const el=document.getElementById(id);if(el)observer.observe(el)})}
+})();
+</script>
 </body>
 </html>
