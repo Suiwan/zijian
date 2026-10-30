@@ -22,7 +22,7 @@ a{color:inherit;text-decoration-color:var(--faint);text-underline-offset:4px}a:h
 button{font:inherit}button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid var(--focus);outline-offset:4px}
 h1,h2,h3,p{margin-top:0}h1,h2{color:var(--ink)}
 .serif{font-family:"Iowan Old Style","Palatino Linotype",Georgia,"Songti SC",serif}
-.page{width:min(100% - 86px,1080px);margin-inline:auto;display:grid;grid-template-columns:275px minmax(0,1fr);gap:clamp(55px,8vw,114px);padding-top:75px}
+.page{width:min(100% - 64px,1200px);margin-inline:auto;display:grid;grid-template-columns:275px minmax(0,1fr);gap:clamp(44px,5vw,80px);padding-top:75px}
 .sidebar{align-self:start;position:sticky;top:34px;padding-bottom:40px}
 .portrait{width:178px;height:217px;display:block;object-fit:cover;object-position:center 32%;filter:saturate(.9);background:#e3e6e2}
 .name{font-family:"Iowan Old Style","Palatino Linotype",Georgia,serif;letter-spacing:-.045em;font-weight:500;line-height:1.05;font-size:39px;margin:27px 0 2px}
@@ -43,9 +43,11 @@ h1,h2,h3,p{margin-top:0}h1,h2{color:var(--ink)}
 .content{min-width:0;padding-bottom:78px}
 .intro{padding:9px 0 72px}
 .eyeline{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:19px}
-.intro h2{font-family:"Iowan Old Style","Palatino Linotype",Georgia,"Songti SC",serif;font-size:clamp(38px,4.1vw,53px);font-weight:500;letter-spacing:-.046em;line-height:1.17;max-width:710px;margin-bottom:27px}
-.intro p:not(.eyeline){font-size:16px;line-height:1.84;max-width:690px;margin-bottom:14px}
+.intro h2{font-family:"Iowan Old Style","Palatino Linotype",Georgia,"Songti SC",serif;font-size:clamp(38px,4.1vw,53px);font-weight:500;letter-spacing:-.046em;line-height:1.17;max-width:790px;margin-bottom:27px}
+.intro p:not(.eyeline){font-size:16px;line-height:1.84;max-width:760px;margin-bottom:14px}
 .intro .lead{color:var(--ink)}
+.intro .lead .advisor-link{color:inherit;text-decoration:underline;text-decoration-color:var(--faint);text-decoration-thickness:1px;text-underline-offset:3px}
+.intro .lead .advisor-link:hover{color:var(--accent);text-decoration-color:currentColor}
 .section{padding:0 0 67px;scroll-margin-top:28px}
 .section-head{display:flex;align-items:baseline;justify-content:space-between;gap:24px;padding-bottom:17px;border-bottom:1px solid var(--ink)}
 .section h2{font-family:"Iowan Old Style","Palatino Linotype",Georgia,"Songti SC",serif;font-weight:500;font-size:29px;letter-spacing:-.03em;line-height:1.25;margin:0}
@@ -134,8 +136,8 @@ html[lang="en"] .zh,html[lang="zh-CN"] .en{display:none!important}
   <section class="intro" id="about">
     <p class="eyeline"><span class="en">About me</span><span class="zh">关于我</span></p>
     <h2><span class="en">I study how people learn and reason with AI.</span><span class="zh">我关注 AI 参与时，人们如何学习与推理。</span></h2>
-    <p class="lead en">I'm a master's student at Peking University's Graduate School of Education, advised by <strong>Prof. Yizhou Fan</strong>.</p>
-    <p class="lead zh">我是北京大学教育学院教育技术系硕士研究生，导师为<strong>范逸洲老师</strong>。</p>
+    <p class="lead en">I'm a master's student at Peking University's Graduate School of Education, advised by <strong><a class="advisor-link" href="https://scholar.google.com/citations?user=EBZdbGwAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Prof. Yizhou Fan</a></strong>.</p>
+    <p class="lead zh">我是北京大学教育学院教育技术系硕士研究生，导师为<strong><a class="advisor-link" href="https://scholar.google.com/citations?user=EBZdbGwAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">范逸洲老师</a></strong>。</p>
     <p class="en">My research is concerned with LLM-based learner simulation, complex problem solving and learning analytics. I build and study AI-supported learning environments, using traces of learners' decisions and interactions to understand how their reasoning develops over time.</p>
     <p class="zh">我的研究围绕大语言模型模拟学习者、复杂问题解决与学习分析展开。我参与开发 AI 支持的学习环境，并通过学习者的决策与交互记录分析推理过程如何随时间变化。</p>
   </section>
